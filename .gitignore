@@ -1,0 +1,30 @@
+# Local SQLite databases
+forum.db
+data/*.db
+*.db-shm
+*.db-wal
+
+# Uploaded files and generated runtime data
+static/uploads/*
+data/uploads/*
+
+# Keep upload directories if placeholder files are added later
+!static/uploads/.gitkeep
+!data/uploads/.gitkeep
+
+# Go build outputs and test binaries
+*.exe
+*.test
+forum
+forum_test.exe
+
+# Logs and temporary files
+*.log
+*.tmp
+*.out
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
