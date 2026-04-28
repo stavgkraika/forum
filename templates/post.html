@@ -1,0 +1,41 @@
+{{define "post.html"}}{{template "header" .}}
+<article class="card">
+  <h1>{{.Post.Title}}</h1>
+  <p class="meta">by {{.Post.Username}} - {{.Post.CreatedAt}}</p>
+  {{if .Post.ImagePath}}<img class="post-image" src="{{.Post.ImagePath}}" alt="{{.Post.Title}}">{{end}}
+  <p>{{.Post.Content}}</p>
+  <div>{{range .Post.Categories}}<span class="tag">#{{.Name}}</span>{{end}}</div>
+  <div class="reactions"><span>Like {{.Post.Likes}}</span><span>Dislike {{.Post.Dislikes}}</span></div>
+  {{if .User}}
+  <form method="post" action="/post/{{.Post.ID}}/react" class="inline">
+    <button type="submit" name="value" value="1">Like</button>
+    <button type="submit" name="value" value="-1">Dislike</button>
+    {{if ne .Post.UserReacted 0}}<button type="submit" name="value" value="0">Clear</button>{{end}}
+  </form>
+  {{end}}
+</article>
+
+<section class="panel">
+  <h2>Comments</h2>
+  {{if .User}}
+  <form method="post" action="/post/{{.Post.ID}}/comment">
+    <label>Add a comment<textarea name="content" rows="3" required></textarea></label>
+    <button type="submit">Post comment</button>
+  </form>
+  {{else}}<p><a href="/login">Login</a> to comment.</p>{{end}}
+</section>
+
+{{range .Comments}}
+<article class="comment">
+  <p>{{.Content}}</p>
+  <p class="meta">by {{.Username}} - {{.CreatedAt}} - Like {{.Likes}} - Dislike {{.Dislikes}}</p>
+  {{if $.User}}
+  <form method="post" action="/comment/{{.ID}}/react" class="inline">
+    <button type="submit" name="value" value="1">Like</button>
+    <button type="submit" name="value" value="-1">Dislike</button>
+    {{if ne .UserReacted 0}}<button type="submit" name="value" value="0">Clear</button>{{end}}
+  </form>
+  {{end}}
+</article>
+{{else}}<p class="empty">No comments yet.</p>{{end}}
+{{template "footer" .}}{{end}}

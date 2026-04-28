@@ -1,0 +1,6 @@
+{{define "header"}}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{.Title}}</title><link rel="stylesheet" href="/static/css/style.css"></head><body>
+<header class="top"><a class="brand" href="/">⬡ Forum</a><nav>{{if .User}}<span>Hi, {{.User.Username}}</span><a href="/post/create">New post</a><a href="/?type=created">My posts</a><a href="/?type=liked">Liked</a><form method="post" action="/logout" class="inline"><button type="submit">Logout</button></form>{{else}}<a href="/login">Login</a><a href="/register" class="btn-nav">Register</a>{{end}}</nav></header>
+<main class="wrap">{{if .Error}}<div class="error">{{.Error}}</div>{{end}}
+{{end}}
+{{define "footer"}}</main></body></html>{{end}}

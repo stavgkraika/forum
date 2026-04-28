@@ -1,0 +1,18 @@
+{{define "home.html"}}{{template "header" .}}
+<div class="hero"><h1>Welcome to Forum</h1><p>Share ideas, ask questions, explore topics.</p></div>
+<div class="filters">
+  <a href="/">All posts</a>
+  {{range .Categories}}<a href="/?category={{.ID}}">#{{.Name}}</a>{{end}}
+  {{if .User}}<a href="/?type=created">My posts</a><a href="/?type=liked">Liked</a>{{end}}
+</div>
+{{range .Posts}}
+<article class="card">
+  <h2><a href="/post/{{.ID}}">{{.Title}}</a></h2>
+  <p class="meta">by {{.Username}} - {{.CreatedAt}}</p>
+  {{if .ImagePath}}<img class="post-image thumb" src="{{.ImagePath}}" alt="{{.Title}}">{{end}}
+  <p>{{.Content}}</p>
+  <div>{{range .Categories}}<span class="tag">#{{.Name}}</span>{{end}}</div>
+  <div class="reactions"><span>Like {{.Likes}}</span><span>Dislike {{.Dislikes}}</span></div>
+</article>
+{{else}}<p class="empty">No posts yet. Be the first to post!</p>{{end}}
+{{template "footer" .}}{{end}}

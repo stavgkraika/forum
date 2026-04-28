@@ -1,0 +1,15 @@
+{{define "login.html"}}{{template "header" .}}
+<section class="panel small">
+  <h1>Login</h1>
+  <form method="POST" action="/login">
+    <label>Email<input name="email" type="email" placeholder="you@example.com" required></label>
+    <label>Password<input name="password" type="password" placeholder="password" required></label>
+    <button type="submit">Login</button>
+  </form>
+  <div class="oauth-actions">
+    <a class="oauth-btn" href="/auth/github">Login with GitHub</a>
+    <a class="oauth-btn" href="/auth/google">Login with Google</a>
+  </div>
+  <p style="margin-top:1rem;color:#64748b;font-size:.88rem">No account? <a href="/register">Register</a></p>
+</section>
+{{template "footer" .}}{{end}}

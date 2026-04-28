@@ -1,0 +1,12 @@
+{{define "register.html"}}{{template "header" .}}
+<section class="panel small">
+  <h1>Create account</h1>
+  <form method="POST" action="/register">
+    <label>Email<input name="email" type="email" placeholder="you@example.com" required></label>
+    <label>Username<input name="username" placeholder="your username" required minlength="3" maxlength="30"></label>
+    <label>Password<input name="password" type="password" placeholder="password" required minlength="8"></label>
+    <button type="submit">Create account</button>
+  </form>
+  <p style="margin-top:1rem;color:#64748b;font-size:.88rem">Already have an account? <a href="/login">Login</a></p>
+</section>
+{{template "footer" .}}{{end}}

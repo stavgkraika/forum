@@ -1,0 +1,10 @@
+{{define "oauth_dev.html"}}{{template "header" .}}
+<section class="panel small">
+  <h1>{{.Title}}</h1>
+  <form method="POST">
+    <label>Username<input name="username" placeholder="oauth user" required minlength="3" maxlength="30"></label>
+    <button type="submit">Continue</button>
+  </form>
+  <p style="margin-top:1rem;color:#64748b;font-size:.88rem">OAuth provider credentials are not configured, so this local login creates a provider-backed test user.</p>
+</section>
+{{template "footer" .}}{{end}}

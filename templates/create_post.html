@@ -1,0 +1,15 @@
+{{define "create_post.html"}}{{template "header" .}}
+<section class="panel">
+  <h1>Create post</h1>
+  <form method="post" action="/post/create" enctype="multipart/form-data">
+    <label>Title<input name="title" required maxlength="120"></label>
+    <label>Content<textarea name="content" rows="8" required></textarea></label>
+    <label>Image<input name="image" type="file" accept="image/png,image/jpeg,image/gif"></label>
+    <fieldset style="border:1px solid #334155;border-radius:8px;padding:1rem;margin-top:.9rem">
+      <legend style="color:#94a3b8;padding:0 .5rem">Categories</legend>
+      {{range .Categories}}<label class="check"><input type="checkbox" name="categories" value="{{.ID}}"> {{.Name}}</label>{{end}}
+    </fieldset>
+    <button type="submit">Publish</button>
+  </form>
+</section>
+{{template "footer" .}}{{end}}

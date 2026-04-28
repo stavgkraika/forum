@@ -1,0 +1,74 @@
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#0f172a;color:#e2e8f0;min-height:100vh}
+
+/* NAV */
+.top{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:#1e293b;border-bottom:1px solid #334155;position:sticky;top:0;z-index:10}
+.brand{color:#818cf8;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:.5px}
+.top nav{display:flex;gap:.75rem;align-items:center}
+.top nav a{color:#94a3b8;text-decoration:none;font-size:.9rem;padding:.4rem .75rem;border-radius:8px;transition:background .15s,color .15s}
+.top nav a:hover{background:#334155;color:#e2e8f0}
+.top nav .btn-nav{background:#6366f1;color:#fff;padding:.4rem .9rem;border-radius:8px;font-size:.9rem;text-decoration:none;font-weight:600;transition:background .15s}
+.top nav .btn-nav:hover{background:#4f46e5}
+.top nav span{color:#64748b;font-size:.9rem}
+
+/* LAYOUT */
+.wrap{max-width:860px;margin:2.5rem auto;padding:0 1.25rem}
+.small{max-width:440px;margin:auto}
+
+/* HERO */
+.hero{text-align:center;padding:3rem 1rem 2rem;margin-bottom:1.5rem}
+.hero h1{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:0 0 .5rem}
+.hero p{color:#64748b;font-size:1rem;margin:0}
+
+/* FILTERS */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;justify-content:center}
+.filters a{color:#94a3b8;text-decoration:none;padding:.35rem .8rem;border-radius:999px;border:1px solid #334155;font-size:.85rem;transition:all .15s}
+.filters a:hover,.filters a.active{background:#6366f1;color:#fff;border-color:#6366f1}
+
+/* CARDS */
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:1rem;transition:border-color .15s,box-shadow .15s}
+.card:hover{border-color:#6366f1;box-shadow:0 0 0 1px #6366f133}
+.card h2{margin:0 0 .4rem;font-size:1.1rem}
+.card h2 a{color:#e2e8f0;text-decoration:none}
+.card h2 a:hover{color:#818cf8}
+.meta{color:#475569;font-size:.82rem;margin:.25rem 0 .75rem}
+.card p{color:#94a3b8;font-size:.9rem;margin:.5rem 0;line-height:1.6}
+.reactions{display:flex;gap:1rem;margin-top:.75rem;font-size:.85rem;color:#64748b}
+.reactions span{display:flex;align-items:center;gap:.3rem}
+.post-image{display:block;width:100%;max-height:460px;object-fit:contain;background:#0f172a;border:1px solid #334155;border-radius:10px;margin:.75rem 0}
+.post-image.thumb{max-height:220px;object-fit:cover}
+
+/* TAGS */
+.tag{display:inline-block;background:#1e3a5f;color:#38bdf8;padding:.2rem .55rem;border-radius:999px;font-size:.78rem;margin-right:.3rem;border:1px solid #0ea5e920}
+
+/* PANEL (forms) */
+.panel{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:1.75rem;margin-bottom:1rem}
+h1,h2{margin-top:0;color:#e2e8f0}
+a{color:#818cf8}
+
+/* FORM ELEMENTS */
+label{display:block;margin:.9rem 0 0;color:#94a3b8;font-size:.88rem;font-weight:500}
+input,textarea,select{width:100%;padding:.7rem .9rem;border:1px solid #334155;border-radius:8px;background:#0f172a;color:#e2e8f0;font-size:.95rem;margin-top:.35rem;outline:none;transition:border-color .15s}
+input:focus,textarea:focus{border-color:#6366f1}
+textarea{resize:vertical;min-height:120px}
+
+button,[type=submit]{padding:.6rem 1.2rem;border:0;border-radius:8px;background:#6366f1;color:white;cursor:pointer;font-size:.95rem;font-weight:600;transition:background .15s;margin-top:1rem}
+button:hover,[type=submit]:hover{background:#4f46e5}
+
+.oauth-actions{display:grid;gap:.6rem;margin-top:1rem}
+.oauth-btn{display:block;text-align:center;text-decoration:none;padding:.65rem 1rem;border:1px solid #334155;border-radius:8px;color:#e2e8f0;background:#0f172a;font-weight:600}
+.oauth-btn:hover{background:#334155;color:#fff}
+
+.inline{display:inline-flex;gap:.4rem;margin:0}
+.inline button{background:#334155;margin-top:0;padding:.4rem .75rem;font-size:.85rem}
+.inline button:hover{background:#475569}
+
+/* ERROR / EMPTY */
+.error{padding:1rem;background:#450a0a;border:1px solid #7f1d1d;color:#fca5a5;border-radius:10px;margin-bottom:1rem}
+.empty{text-align:center;color:#475569;padding:3rem 0;font-size:.95rem}
+
+/* COMMENT */
+.comment{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:1rem 1.25rem;margin-bottom:.75rem}
+
+.check{display:inline-block;margin-right:1rem}
+.check input{width:auto}
