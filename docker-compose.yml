@@ -1,0 +1,12 @@
+services:
+  forum:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=data/forum.db
+      - SCHEMA_PATH=migrations/schema.sql
+      - UPLOAD_DIR=data/uploads
+      - UPLOAD_URL_PREFIX=/uploads
